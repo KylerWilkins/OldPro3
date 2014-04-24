@@ -14,7 +14,7 @@ namespace StepDX
 {
     public partial class Game : Form
     {
-
+        /// This is a test change of file Game.cs
         /// <summary>
         /// The DirectX device we will draw on
         /// </summary>
