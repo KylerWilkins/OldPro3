@@ -70,6 +70,9 @@ namespace StepDX
         // boolean to track standing condition. set in SpacebarDown and Advance (velocity->0)
         private bool stood;
 
+        // object to keep track of score
+        private Score score;
+
 
         public Game()
         {
@@ -86,6 +89,8 @@ namespace StepDX
                                         Pool.Managed);
 
             background = new Background(device, playingW, playingH);
+
+            score = new Score(device);
 
             // Determine the last time
             stopwatch.Start();
@@ -209,6 +214,8 @@ namespace StepDX
       
             player.Render(device);
 
+            score.DisplayScore();
+
             //End the scene
             device.EndScene();
             device.Present();
@@ -296,11 +303,14 @@ namespace StepDX
                         }
                         player.V = v;
                         player.Advance(0);
+
                     }
                 }
 
                 delta -= step;
             }
+
+            score.Advance(time);
 
         }
 

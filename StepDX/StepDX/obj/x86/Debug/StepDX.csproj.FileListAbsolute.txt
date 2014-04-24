@@ -32,3 +32,12 @@ C:\Users\Alex\Desktop\StepDX\StepDX\obj\x86\Debug\StepDX.csprojResolveAssemblyRe
 C:\Users\Alex\Desktop\StepDX\StepDX\obj\x86\Debug\StepDX.Game.resources
 C:\Users\Alex\Desktop\StepDX\StepDX\obj\x86\Debug\StepDX.Properties.Resources.resources
 C:\Users\Alex\Desktop\StepDX\StepDX\obj\x86\Debug\StepDX.csproj.GenerateResource.Cache
+C:\Users\Trevor\Documents\GitHub\Project3CSE471\StepDX\StepDX\bin\Debug\StepDX.exe.config
+C:\Users\Trevor\Documents\GitHub\Project3CSE471\StepDX\StepDX\obj\x86\Debug\StepDX.exe
+C:\Users\Trevor\Documents\GitHub\Project3CSE471\StepDX\StepDX\obj\x86\Debug\StepDX.pdb
+C:\Users\Trevor\Documents\GitHub\Project3CSE471\StepDX\StepDX\bin\Debug\StepDX.exe
+C:\Users\Trevor\Documents\GitHub\Project3CSE471\StepDX\StepDX\bin\Debug\StepDX.pdb
+C:\Users\Trevor\Documents\GitHub\Project3CSE471\StepDX\StepDX\obj\x86\Debug\StepDX.csprojResolveAssemblyReference.cache
+C:\Users\Trevor\Documents\GitHub\Project3CSE471\StepDX\StepDX\obj\x86\Debug\StepDX.Game.resources
+C:\Users\Trevor\Documents\GitHub\Project3CSE471\StepDX\StepDX\obj\x86\Debug\StepDX.Properties.Resources.resources
+C:\Users\Trevor\Documents\GitHub\Project3CSE471\StepDX\StepDX\obj\x86\Debug\StepDX.csproj.GenerateResource.Cache
