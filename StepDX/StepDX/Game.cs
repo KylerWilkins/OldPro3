@@ -73,6 +73,14 @@ namespace StepDX
         // object to keep track of score
         private Score score;
 
+        // object to keep track of lives
+        private Lives lives;
+
+        // object to handle game overs
+        private GameOver game_over;
+
+        // Font to use for writing
+        private Microsoft.DirectX.Direct3D.Font font;
 
         public Game()
         {
@@ -91,6 +99,24 @@ namespace StepDX
             background = new Background(device, playingW, playingH);
 
             score = new Score(device);
+
+            lives = new Lives(device);
+            lives.lives_number = 3;
+
+            game_over = new GameOver(device);
+
+            //create the font
+            font = new Microsoft.DirectX.Direct3D.Font(device,  // Device we are drawing on
+                20,         // Font height in pixels
+                0,          // Font width in pixels or zero to match height
+                FontWeight.Bold,    // Font weight (Normal, Bold, etc.)
+                0,          // mip levels (0 for default)
+                false,      // italics?
+                CharacterSet.Default,   // Character set to use
+                Precision.Default,      // The font precision, try some of them...
+                FontQuality.Default,    // Quality?
+                PitchAndFamily.FamilyDoNotCare,     // Pitch and family, we don't care
+                "Arial");               // And the name of the font
 
             // Determine the last time
             stopwatch.Start();
@@ -215,6 +241,12 @@ namespace StepDX
             player.Render(device);
 
             score.DisplayScore();
+            lives.DisplayLives();
+
+            if (game_over.gameOver)
+            {
+                game_over.DisplayGameOver();
+            }
 
             //End the scene
             device.EndScene();
@@ -225,25 +257,28 @@ namespace StepDX
         {
             if (e.KeyCode == Keys.Escape)
                 this.Close(); // Esc was pressed
-            else if (e.KeyCode == Keys.Right)
+            else if (!game_over.gameOver)
             {
-                Vector2 v = player.V;
-                v.X = 1.5f;
-                player.V = v;
-            }
-            else if (e.KeyCode == Keys.Left)
-            {
-                Vector2 v = player.V;
-                v.X = -1.5f;
-                player.V = v;
-            }
-            else if (e.KeyCode == Keys.Space && stood == true)  // only allow jumps from standing condition
-            {
-                stood = false;
-                Vector2 v = player.V;
-                v.Y = 5.5f;
-                player.V = v;
-                player.A = new Vector2(0, -9.8f);
+                if (e.KeyCode == Keys.Right)
+                {
+                    Vector2 v = player.V;
+                    v.X = 1.5f;
+                    player.V = v;
+                }
+                else if (e.KeyCode == Keys.Left)
+                {
+                    Vector2 v = player.V;
+                    v.X = -1.5f;
+                    player.V = v;
+                }
+                else if (e.KeyCode == Keys.Space && stood == true)  // only allow jumps from standing condition
+                {
+                    stood = false;
+                    Vector2 v = player.V;
+                    v.Y = 5.5f;
+                    player.V = v;
+                    player.A = new Vector2(0, -9.8f);
+                }
             }
 
         }

@@ -18,17 +18,14 @@ namespace StepDX
         // Total score
         private int scorenum = 0;
 
-        private Device device = null;
-
         // Font to use for writing
         private Microsoft.DirectX.Direct3D.Font font;
 
         // List to hold flying scores
         private List<ScoreFlying> FlyingScores = new List<ScoreFlying>();
 
-        public Score(Device dev)
+        public Score(Device device)
         {
-            device = dev;
 
             //create the font
             font = new Microsoft.DirectX.Direct3D.Font(device,  // Device we are drawing on
